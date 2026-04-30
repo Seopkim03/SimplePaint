@@ -41,12 +41,13 @@
             btnOpenFile = new Button();
             btnSaveFile = new Button();
             picCanvas = new PictureBox();
-            pnlScroll = new Panel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).BeginInit();
             grpShape.SuspendLayout();
             grpColor.SuspendLayout();
             grpThickness.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picCanvas).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblAppName
@@ -171,24 +172,25 @@
             // 
             // picCanvas
             // 
-            picCanvas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             picCanvas.BackColor = Color.White;
             picCanvas.BorderStyle = BorderStyle.FixedSingle;
-            picCanvas.Location = new Point(12, 150);
+            picCanvas.Location = new Point(8, 17);
             picCanvas.Name = "picCanvas";
-            picCanvas.Size = new Size(724, 345);
+            picCanvas.Size = new Size(769, 287);
             picCanvas.SizeMode = PictureBoxSizeMode.StretchImage;
             picCanvas.TabIndex = 11;
             picCanvas.TabStop = false;
             // 
-            // pnlScroll
+            // panel1
             // 
-            pnlScroll.AutoScroll = true;
-            pnlScroll.Dock = DockStyle.Fill;
-            pnlScroll.Location = new Point(0, 0);
-            pnlScroll.Name = "pnlScroll";
-            pnlScroll.Size = new Size(769, 522);
-            pnlScroll.TabIndex = 12;
+            panel1.AutoScroll = true;
+            panel1.AutoSize = true;
+            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel1.Controls.Add(picCanvas);
+            panel1.Location = new Point(4, 149);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(780, 307);
+            panel1.TabIndex = 12;
             // 
             // Form1
             // 
@@ -196,15 +198,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(769, 522);
-            Controls.Add(picCanvas);
+            ClientSize = new Size(819, 503);
+            Controls.Add(panel1);
             Controls.Add(btnSaveFile);
             Controls.Add(btnOpenFile);
             Controls.Add(grpThickness);
             Controls.Add(grpColor);
             Controls.Add(grpShape);
             Controls.Add(lblAppName);
-            Controls.Add(pnlScroll);
             Name = "Form1";
             Text = "Simple Paint v1.0";
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).EndInit();
@@ -213,6 +214,7 @@
             grpThickness.ResumeLayout(false);
             grpThickness.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picCanvas).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -231,6 +233,6 @@
         private Button btnOpenFile;
         private Button btnSaveFile;
         private PictureBox picCanvas;
-        private Panel pnlScroll;
+        private Panel panel1;
     }
 }

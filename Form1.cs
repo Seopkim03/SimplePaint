@@ -9,7 +9,7 @@ namespace SimplePaint
 
     public partial class Form1 : Form
     {
-        private double zoomRatio = 1.0;
+        //private double zoomRatio = 1.0;
         private Image originalImage = null;
 
         enum ToolType { Line, Rectangle, Circle }  // 사용할 도형 타입
@@ -54,7 +54,7 @@ namespace SimplePaint
             trbLineWidth.Value = 2;
             trbLineWidth.ValueChanged += trbLineWidth_ValueChanged;
 
-            this.picCanvas.MouseWheel += new MouseEventHandler(picCanvas_MouseWheel);
+            //this.picCanvas.MouseWheel += new MouseEventHandler(picCanvas_MouseWheel);
         }
 
         private void PicCanvas_MouseDown(object sender, MouseEventArgs e)
@@ -148,95 +148,35 @@ namespace SimplePaint
         {
             currentLineWidth = trbLineWidth.Value;
         }
-
-        // --- 파일 열기 ---
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Title = "이미지 열기";
-                ofd.Filter = "이미지 파일|*.jpg;*.jpeg;*.png;*.bmp";
-
+                ofd.Filter = "이미지 파일 (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png|모든 파일 (*.*)|*.*";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
-                        if (originalImage != null) originalImage.Dispose();
-
-                        // 이미지 로드 (파일 잠금 방지)
-                        using (var tempImg = Image.FromFile(ofd.FileName))
+                        // 기존 이미지가 있다면 해제
+                        if (originalImage != null)
                         {
-                            originalImage = new Bitmap(tempImg);
+                            originalImage.Dispose();
+                            originalImage = null;
                         }
-
-                        picCanvas.Image = originalImage;
-
-                        // 배율 초기화 및 캔버스 크기 조정
-                        //zoomRatio = 1.0;
-                        //UpdateCanvasSize();
-
-                        // 폼 크기도 이미지에 맞춰 조정 (선택 사항, 이전 답변 참고)
-                        AdjustFormSizeToImage();
+                        // 선택한 이미지 로드
+                        originalImage = Image.FromFile(ofd.FileName);
+                        // 캔버스 크기에 맞게 조정하여 표시
+                        canvasGraphics.Clear(Color.White); // 캔버스 초기화
+                        canvasGraphics.DrawImage(originalImage, new Rectangle(0, 0, picCanvas.Width, picCanvas.Height));
+                        picCanvas.Invalidate(); // 화면 갱신
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("오류: " + ex.Message);
+                        MessageBox.Show($"이미지를 여는 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-        }
-
-        // --- 마우스 휠로 확대/축소 ---
-        private void picCanvas_MouseWheel(object sender, MouseEventArgs e)
-        {
-            if (originalImage == null) return;
-
-            // Ctrl 키를 누른 상태에서 휠을 돌릴 때만
-            if (ModifierKeys == Keys.Control)
-            {
-                // 휠 방향에 따라 배율 조정 (±10%)
-                if (e.Delta > 0) zoomRatio += 0.1;
-                else if (e.Delta < 0 && zoomRatio > 0.1) zoomRatio -= 0.1;
-
-                // 캔버스 크기 업데이트 (비율 유지)
-                //UpdateCanvasSize();
-
-                // 스크롤 이벤트가 부모(Panel)로 전달되는 것을 방지
-                ((HandledMouseEventArgs)e).Handled = true;
-            }
-        }
-
-        // --- [핵심] 이미지 비율을 유지하며 캔버스 크기 업데이트 ---
-        /*private void UpdateCanvasSize()
-        {
-            if (originalImage == null) return;
-
-            // 1. 원본 이미지 비율 계산 (폭 / 높이)
-            double imageAspectRatio = (double)originalImage.Width / originalImage.Height;
-
-            // 2. 현재 배율을 적용한 목표 폭(Width) 계산
-            int targetWidth = (int)(originalImage.Width * zoomRatio);
-
-            // 3. 목표 폭을 기준으로 원본 비율을 적용하여 높이(Height) 계산
-            int targetHeight = (int)(targetWidth / imageAspectRatio);
-
-            // 4. PictureBox의 크기를 계산된 비율로 설정
-            // 이렇게 하면 PictureBox 자체가 이미지와 똑같은 비율이 됩니다.
-            picCanvas.Size = new Size(targetWidth, targetHeight);
-
-            // pnlScroll.AutoScroll=true에 의해 스크롤바가 필요하면 자동으로 생성됨
-        }*/
-
-        // (참고용) 이전 답변의 폼 크기 조절 함수
-        private void AdjustFormSizeToImage()
-        {
-            if (originalImage == null) return;
-            int targetWidth = originalImage.Width + (this.Width - pnlScroll.Width) + 40;
-            int targetHeight = originalImage.Height + (this.Height - pnlScroll.Height) + 40;
-            Rectangle screenRect = Screen.FromControl(this).WorkingArea;
-            if (targetWidth > screenRect.Width) targetWidth = (int)(screenRect.Width * 0.9);
-            if (targetHeight > screenRect.Height) targetHeight = (int)(screenRect.Height * 0.9);
-            this.Size = new Size(targetWidth, targetHeight);
         }
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
