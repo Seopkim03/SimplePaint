@@ -41,6 +41,7 @@
             btnOpenFile = new Button();
             btnSaveFile = new Button();
             picCanvas = new PictureBox();
+            pnlScroll = new Panel();
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).BeginInit();
             grpShape.SuspendLayout();
             grpColor.SuspendLayout();
@@ -175,15 +176,27 @@
             picCanvas.BorderStyle = BorderStyle.FixedSingle;
             picCanvas.Location = new Point(12, 150);
             picCanvas.Name = "picCanvas";
-            picCanvas.Size = new Size(775, 283);
+            picCanvas.Size = new Size(724, 345);
+            picCanvas.SizeMode = PictureBoxSizeMode.StretchImage;
             picCanvas.TabIndex = 11;
             picCanvas.TabStop = false;
+            // 
+            // pnlScroll
+            // 
+            pnlScroll.AutoScroll = true;
+            pnlScroll.Dock = DockStyle.Fill;
+            pnlScroll.Location = new Point(0, 0);
+            pnlScroll.Name = "pnlScroll";
+            pnlScroll.Size = new Size(769, 522);
+            pnlScroll.TabIndex = 12;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(769, 522);
             Controls.Add(picCanvas);
             Controls.Add(btnSaveFile);
             Controls.Add(btnOpenFile);
@@ -191,6 +204,7 @@
             Controls.Add(grpColor);
             Controls.Add(grpShape);
             Controls.Add(lblAppName);
+            Controls.Add(pnlScroll);
             Name = "Form1";
             Text = "Simple Paint v1.0";
             ((System.ComponentModel.ISupportInitialize)trbLineWidth).EndInit();
@@ -217,5 +231,6 @@
         private Button btnOpenFile;
         private Button btnSaveFile;
         private PictureBox picCanvas;
+        private Panel pnlScroll;
     }
 }
