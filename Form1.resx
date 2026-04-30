@@ -121,7 +121,7 @@
   <data name="btnLine.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAANFJREFUWEfdj8kSwyAMxfj/n24nhzJBxS8sZotmdGgKRg6flxD44VTeu0gIIXoS
+        vQAADr0BR/uQrQAAANFJREFUWEfdj8kSwyAMxfj/n24nhzJBxS8sZotmdGgKRg6flxD44VTeu0gIIXoS
         Se19idMWKlrkhIWqFtl5ob8qRlvuhlnEcMtdkCWMVq6mqIDRylVUvcxo5WyaXmS05Uy6XmO45QxcXmG4
         5UjcpjNaOQL3qYxWeuI77QajlR74TBEw2rKX/gmFMNyylfabDTBaWUv9DQcYrSyl/OQAGK184vnEBBht
         qdD/TobhljnyXxfDcMvkTvJrIxhtGc8ntzeE4TSeS25tDBc4dpEfuSUuvl5WZbS6FBV2AAAAAElFTkSu
@@ -131,7 +131,7 @@
   <data name="btnRectangle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAIlJREFUWEftj0EKwDAQAvf/n24vItUPrEkd8BI2MDPPJYw/nMrdITNzzOgsBcCP
+        vQAADr0BR/uQrQAAAIlJREFUWEftj0EKwDAQAvf/n24vItUPrEkd8BI2MDPPJYw/nMrdITNzzOgsBcCP
         k0dnKQB+nDw6SwHw4+TRWQqAHyePzlIA/Pj7YRN3asg27tSQbdypIdu4U0O2caeGbONO/w5JHZ2lAPhx
         8ugsBcCPk0dnKQB+nDw6SwHw4+TRWQoOpiFpNCSNF6xg7fNEYY+qAAAAAElFTkSuQmCC
 </value>
@@ -139,7 +139,7 @@
   <data name="btnCircle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAeCAYAAABuUU38AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAQlJREFUWEfdj0kOAyEMBPn/p5MLB1S0jVkMSkrqi5m2a8rnTygc/CopP1JKCeUk
+        vQAADr0BR/uQrQAAAQlJREFUWEfdj0kOAyEMBPn/p5MLB1S0jVkMSkrqi5m2a8rnTygc/CopP1JKCeUk
         29sot5tVlpsUOJ1Zphs8mJ0o4S954HZGjL9Y+Iko7I3i4b8Gj52Ce1Us7JfA4ix4h1HoaYULvEUZ8K7n
         0E8qLFoLsuF9y6OfVFhU5VvQQ7n0E6Ooyregh/KRdiyw9AL60EkassDSC+hDJ2nIAksvoA+dpCELqngT
         eigf044lFm9CD+Vj2rGkyjfgfcujn1RY9JZkwbueQz9pYJnJgncYhZ42cInKKbhXxcJ+aeCyUaKwN4qH

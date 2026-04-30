@@ -34,14 +34,14 @@
             btnRectangle = new Button();
             btnCircle = new Button();
             cmbColor = new ComboBox();
-            trbLIneWidth = new TrackBar();
+            trbLineWidth = new TrackBar();
             grpShape = new GroupBox();
             grpColor = new GroupBox();
             grpThickness = new GroupBox();
             btnOpenFile = new Button();
             btnSaveFile = new Button();
             picCanvas = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)trbLIneWidth).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)trbLineWidth).BeginInit();
             grpShape.SuspendLayout();
             grpColor.SuspendLayout();
             grpThickness.SuspendLayout();
@@ -105,12 +105,12 @@
             cmbColor.Size = new Size(121, 23);
             cmbColor.TabIndex = 4;
             // 
-            // trbLIneWidth
+            // trbLineWidth
             // 
-            trbLIneWidth.Location = new Point(21, 26);
-            trbLIneWidth.Name = "trbLIneWidth";
-            trbLIneWidth.Size = new Size(104, 45);
-            trbLIneWidth.TabIndex = 5;
+            trbLineWidth.Location = new Point(21, 26);
+            trbLineWidth.Name = "trbLineWidth";
+            trbLineWidth.Size = new Size(104, 45);
+            trbLineWidth.TabIndex = 5;
             // 
             // grpShape
             // 
@@ -136,7 +136,7 @@
             // 
             // grpThickness
             // 
-            grpThickness.Controls.Add(trbLIneWidth);
+            grpThickness.Controls.Add(trbLineWidth);
             grpThickness.Location = new Point(396, 56);
             grpThickness.Name = "grpThickness";
             grpThickness.Size = new Size(144, 88);
@@ -189,7 +189,7 @@
             Controls.Add(lblAppName);
             Name = "Form1";
             Text = "Simple Paint v1.0";
-            ((System.ComponentModel.ISupportInitialize)trbLIneWidth).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trbLineWidth).EndInit();
             grpShape.ResumeLayout(false);
             grpColor.ResumeLayout(false);
             grpThickness.ResumeLayout(false);
@@ -206,7 +206,7 @@
         private Button btnRectangle;
         private Button btnCircle;
         private ComboBox cmbColor;
-        private TrackBar trbLIneWidth;
+        private TrackBar trbLineWidth;
         private GroupBox grpShape;
         private GroupBox grpColor;
         private GroupBox grpThickness;
