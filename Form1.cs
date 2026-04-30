@@ -6,5 +6,10 @@ namespace SimplePaint
         {
             InitializeComponent();
         }
+
+        private void btnLine_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
