@@ -146,23 +146,27 @@
             // 
             // btnOpenFile
             // 
+            btnOpenFile.BackColor = Color.FromArgb(255, 255, 128);
             btnOpenFile.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             btnOpenFile.Location = new Point(573, 74);
             btnOpenFile.Name = "btnOpenFile";
             btnOpenFile.Size = new Size(89, 62);
             btnOpenFile.TabIndex = 6;
             btnOpenFile.Text = "열기";
-            btnOpenFile.UseVisualStyleBackColor = true;
+            btnOpenFile.UseVisualStyleBackColor = false;
+            btnOpenFile.Click += btnOpenFile_Click;
             // 
             // btnSaveFile
             // 
+            btnSaveFile.BackColor = SystemColors.ActiveCaption;
             btnSaveFile.Font = new Font("맑은 고딕", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             btnSaveFile.Location = new Point(668, 74);
             btnSaveFile.Name = "btnSaveFile";
             btnSaveFile.Size = new Size(89, 62);
             btnSaveFile.TabIndex = 7;
             btnSaveFile.Text = "저장";
-            btnSaveFile.UseVisualStyleBackColor = true;
+            btnSaveFile.UseVisualStyleBackColor = false;
+            btnSaveFile.Click += btnSaveFile_Click;
             // 
             // picCanvas
             // 
